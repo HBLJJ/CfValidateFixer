@@ -1,0 +1,30 @@
+NOTICE
+======
+
+产品名称：Cloudflare 修复工坊（CfValidateFixer）v1.0.0
+创建者与维护者：火爆辣椒鸡
+首次发布：2026
+
+本文档是 GPLv3 §7(b) 与 §7(c) 所要求的"合理法律声明"与"来源标识"的载体。
+
+版权
+----
+Copyright (C) 2026 火爆辣椒鸡
+
+本项目由 火爆辣椒鸡 创建并持续维护。任何再分发与修改版本，均须保留本 NOTICE 中的创建者信息，不得移除、遮盖或篡改作者署名、产品名，以及用户可见界面和文档中的"关于/版本"信息。详见 LICENSE 顶部的 "Additional Terms under GPLv3 §7"。
+
+许可
+----
+本项目以 GNU General Public License v3.0（GPLv3）发布，并附带 §7 附加条款。
+完整条款见 LICENSE（GPLv3 全文 + 附加条款）。
+
+第三方字体
+----------
+本程序内置的像素字体为 Zpix（最像素），版权归 SolidZORO 所有。
+- 个人项目免费；教育项目免费；商业产品需向作者购买授权（详见 Zpix 仓库说明）。
+- 本源码包不包含 Zpix 字体文件（fonts/zpix.ttf），如需构建请自行从官方 Releases 下载并放入 fonts/ 目录。
+- 官方地址：https://github.com/SolidZORO/zpix-pixel-font/releases
+
+其他第三方组件
+--------------
+.NET 9 运行时、Microsoft.Data.Sqlite、SQLitePCLRaw 等依赖遵循其各自的开源许可。

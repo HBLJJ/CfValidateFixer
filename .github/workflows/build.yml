@@ -1,0 +1,62 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.cs"
+      - "*.csproj"
+      - "assets/**"
+      - "fonts/**"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "*.cs"
+      - "*.csproj"
+      - "assets/**"
+      - "fonts/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build & Publish (win-x64)"
+    runs-on: windows-latest
+
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v4
+
+      - name: 安装 .NET 9 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: 还原依赖
+        run: dotnet restore .\CfValidateFixer.csproj
+
+      - name: 构建（Release）
+        run: dotnet build .\CfValidateFixer.csproj -c Release --no-restore
+
+      - name: 单文件发布（win-x64）
+        run: |
+          dotnet publish .\CfValidateFixer.csproj `
+            -c Release `
+            -r win-x64 `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:IncludeNativeLibrariesForSelfExtract=false `
+            -p:EnableCompressionInSingleFile=true `
+            -o publish
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: CfValidateFixer-win64
+          path: |
+            publish/CfValidateFixer.exe
+            publish/e_sqlite3.dll
+          if-no-files-found: error
+          retention-days: 14
+
+  # 说明：本工作流不包含代码签名。正式发布如需签名，请在本地用 sign.ps1 + 证书执行。

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 邮件反馈
+    url: "mailto:3814830710@qq.com"
+    about: 无法使用 GitHub 时，可直接发邮件到 3814830710@qq.com，建议附上程序目录下的 diagnostic_*.txt 诊断日志。

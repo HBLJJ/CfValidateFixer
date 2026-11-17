@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <NoWarn>$(NoWarn);WFO1000</NoWarn>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <AssemblyTitle>Cloudflare 修复工坊</AssemblyTitle>
+    <Product>Cloudflare 修复工坊</Product>
+    <Company>火爆辣椒鸡</Company>
+    <Authors>火爆辣椒鸡</Authors>
+    <Description>Cloudflare 验证失败 / 加载过长的诊断与一键修复工具</Description>
+    <Copyright>© 2026 火爆辣椒鸡</Copyright>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="tests\**" />
+    <EmbeddedResource Include="fonts\zpix.ttf" Condition="Exists('fonts\zpix.ttf')" />
+    <Content Remove="fonts\zpix.ttf" />
+    <EmbeddedResource Include="assets\sponsor_wechat.jpg" />
+    <EmbeddedResource Include="assets\sponsor_alipay.jpg" />
+  </ItemGroup>
+
+</Project>

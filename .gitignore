@@ -1,0 +1,32 @@
+﻿# build output
+bin/
+obj/
+dist/
+tmp/
+
+# backups and generated files
+backup/
+diagnostic_*.txt
+修复报告_*.txt
+fix-report_*.txt
+*.log
+
+# local settings and secrets
+settings.ini
+feedback.config
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# packaging artifacts
+*.zip
+*.cer
+*.pfx
+
+# scratch screenshots (docs/screenshots is tracked)
+screenshot-*.png
+
+# third-party font (download separately)
+fonts/*.ttf
