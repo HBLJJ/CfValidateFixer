@@ -138,9 +138,3 @@ CfValidateFixer.csproj
 GPLv3，带 §7 署名保护。详见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
 字体用的是 Zpix，作者是 SolidZORO，个人和教学免费，商用要授权，所以源码包里没带字体文件。编译前把 `zpix.ttf` 放进 `fonts/` 目录就行。
-
-## 赞助
-
-软件左下角有收款码，纯自愿，不影响功能。
-
-![赞助](docs/screenshots/sponsor.png)
